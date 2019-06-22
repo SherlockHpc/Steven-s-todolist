@@ -1,0 +1,146 @@
+body{
+    font-family: monospace, sans-serif;
+    background-image: url("../img/background.png");
+}
+
+#header{
+    text-align: center;
+}
+
+#title{
+    font-size: 30px;
+    text-shadow: 1px 1px 4px darkgray;
+    margin-bottom: 20px;
+}
+
+#title span{
+    margin: -7px;
+}
+
+#title .author_name{
+    color: #C22326;
+}
+
+#title .t{
+    color: #C22326;
+}
+
+#title .o{
+    color: #F37338;
+}
+
+#title .d{
+    color: #FDB632;
+}
+
+#title .o2{
+    color: #027878;
+}
+
+#title .s{
+    color: #801638;
+}
+
+#new-todo{
+    height: 25px;
+    width: 50%;
+    font-size: 15px;
+    border: 1px solid black;
+}
+
+#submit-new-todo{
+    background-color: mediumseagreen;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#complete-all{
+    margin-top: 10px;
+    padding: 0;
+    display: block;
+}
+
+#body{
+    position: relative;
+}
+
+#todo-list li{
+    margin: 10px 0 10px;
+    height: 30px;
+}
+
+#todo-list li label{
+    margin-left: 5px;
+    font-size: 17px;
+}
+
+#todo-list li.completed label{
+    color: darkgray;
+    text-decoration: line-through;
+}
+
+#todo-list input.edit{
+    display: none;
+}
+
+#btn-list button{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 5px;
+}
+
+#todo-count{
+    font-size: 15px;
+}
+
+#clear-completed{
+    font-size: 17px;
+    background: rgb(255, 255, 255);
+    height: 40px;
+    width: 45%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.selected{
+    color: mediumseagreen;
+    border: 1px solid mediumseagreen;
+    font-weight: bold;
+}
+
+#footer{
+    text-align: center;
+}
+
+#todo-list{
+    padding: 0;
+}
+
+.todo{
+    border-bottom: 1px solid black;
+}
+
+#todo-list li.editing .todo{
+    display: none;
+}
+
+#todo-list li.editing .edit{
+    display: block;
+    font-size: 15px;
+}
+
+.delete-btn{
+    position: absolute;
+    right: 5px;
+    border: none;
+    background: mediumseagreen;
+    border-radius: 4px;
+}
+
+.edit-btn{
+    position: absolute;
+    right: 80px;
+    border: none;
+    background: mediumseagreen;
+    border-radius: 4px;
+}

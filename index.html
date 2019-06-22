@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Steven's todolist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="header">
+        <h1 id="title">
+            <span class="author_name">Steven's &nbsp</span>
+            <span class="t">t</span>
+            <span class="o">o</span>
+            <span class="d">d</span>
+            <span class="o2">o</span>
+            <span class="s">s</span>
+        </h1>
+        <div id="add-new-todo">
+            <input id="new-todo" placeholder="Add new todo" autofocus>
+            <button id="submit-new-todo">submit</button>
+        </div>
+    </section>
+
+    <section id="body">
+        <div id="complete-all">
+            <input type="checkbox">
+            <label>Complete all</label>
+        </div>
+        <ul id="todo-list">
+        </ul>
+    </section>
+
+    <section id="footer">
+        <div>
+            <p id="todo-count">13 items left</p>
+        </div>
+        <div id="btn-list">
+            <button id="all" class="selected">All</button>
+            <button id="active">Active</button>
+            <button id="completed">Completed</button>
+        </div>
+        <div>
+            <button id="clear-completed">Clear completed</button>
+        </div>
+    </section>
+
+    <script id="todo-template" type="text/x-handlebars-template">
+        {{#this}}
+        <li {{#if completed}} class="completed" {{/if}} id="{{id}}">
+            <div class="todo">
+                <input class="todo-check-box" type="checkbox">
+                <label class="todo-content">{{content}}</label>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </li>
+        <input class="edit" value="{{content}}">
+        {{/this}}
+    </script>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/director.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
