@@ -24,7 +24,7 @@
 
     <section id="body">
         <div id="complete-all">
-            <input type="checkbox">
+            <input id="complete-all-box" type="checkbox">
             <label>Complete all</label>
         </div>
         <ul id="todo-list">
@@ -54,14 +54,14 @@
                 <button class="edit-btn">Edit</button>
                 <button class="delete-btn">Delete</button>
             </div>
+            <input class="edit" value="{{content}}">
+            <!--<button class="update">Update</button>-->
         </li>
-        <input class="edit" value="{{content}}">
         {{/this}}
     </script>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/handlebars-v4.0.5.js"></script>
-    <script src="js/director.js"></script>
     <script src="js/utility.js"></script>
     <script src="js/main.js"></script>
 </body>

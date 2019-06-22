@@ -24,6 +24,12 @@ var Steven_todo = {
 
         let count = this.active_count();
         document.getElementById("todo-count").innerHTML = count.toString() + (count > 1? " items" : " item") + " left";
+        
+        if (count > 0){
+            document.getElementById('complete-all-box').checked = false;
+        }else{
+            document.getElementById('complete-all-box').checked = true;
+        }
 
         switch (this.state_code) {
             case 0:
@@ -41,7 +47,10 @@ var Steven_todo = {
     },
 
     bind_events: function () {
-        $('#todo-list').on('click', '.delete-btn', this.delete_todo.bind(this));
+        $('#todo-list')
+            .on('click', '.delete-btn', this.delete_todo.bind(this))
+            .on('click', '.edit-btn', this.edit.bind(this))
+            .on('keyup', '.edit', this.updateByKeyUp.bind(this));
         $('#new-todo').on('keyup', this.createByKeyUp.bind(this));
         $('#submit-new-todo').on('click', this.createBySubmit.bind(this));
         // $('.todo-check-box').on('change', this.check.bind(this));
@@ -55,6 +64,7 @@ var Steven_todo = {
             .on('click', '#active', this.view_active.bind(this))
             .on('click', '#completed', this.view_completed.bind(this));
         $('#clear-completed').on('click', this.clear_completed.bind(this));
+        // $('.edit-btn').on('click', this.edit.bind(this));
     },
     
     delete_todo: function (event) {
@@ -192,9 +202,25 @@ var Steven_todo = {
     },
 
     edit: function (event) {
-        let input = $(event.target).closest('li').addClass('editing');
-
+        $(event.target).closest('li').addClass('editing');
+        let input = $(event.target).closest('li').find('.edit');
+        input.val(input.val()).focus();
+        console.log('edit');
     },
+
+    updateByKeyUp:function (event) {
+        if(event.which !== ENTER_KEY){
+            return;
+        }
+        let id = event.target.closest('li').id;
+        console.log(id);
+        let value = $(event.target).val().toString().trim();
+        console.log(value);
+
+        let index = this.get_index(id);
+        this.todos[index].content = value;
+        this.render();
+    }
 };
 
 Steven_todo.init();
