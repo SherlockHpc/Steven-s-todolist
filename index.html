@@ -49,7 +49,7 @@
         {{#this}}
         <li {{#if completed}} class="completed" {{/if}} id="{{id}}">
             <div class="todo">
-                <input class="todo-check-box" type="checkbox">
+                <input class="todo-check-box" type="checkbox" {{#if completed}} checked {{/if}}>
                 <label class="todo-content">{{content}}</label>
                 <button class="edit-btn">Edit</button>
                 <button class="delete-btn">Delete</button>

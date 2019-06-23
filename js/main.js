@@ -205,7 +205,7 @@ var Steven_todo = {
     edit: function (event) {
         $(event.target).closest('li').addClass('editing');
         let input = $(event.target).closest('li').find('.edit');
-        input.val(input.val()).focus();
+        input.focus();
         console.log('edit');
     },
 
@@ -226,7 +226,8 @@ var Steven_todo = {
     updateByBtn: function (event) {
         let id = event.target.closest('li').id;
         let value = $(event.target).closest('li').find('.edit').val().trim();
-        console.log(value);
+        console.log(event.target.closest('li'));
+        console.log($(event.target).closest('li'));
 
         let index = this.get_index(id);
         console.log(index);
