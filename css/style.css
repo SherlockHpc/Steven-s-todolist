@@ -79,7 +79,7 @@ body{
     text-decoration: line-through;
 }
 
-#todo-list input.edit{
+#todo-list .update{
     display: none;
 }
 
@@ -124,7 +124,7 @@ body{
     display: none;
 }
 
-#todo-list li.editing .edit{
+#todo-list li.editing .update{
     display: block;
     font-size: 15px;
 }
@@ -141,6 +141,11 @@ body{
     position: absolute;
     right: 80px;
     border: none;
+    background: mediumseagreen;
+    border-radius: 4px;
+}
+
+.update-btn{
     background: mediumseagreen;
     border-radius: 4px;
 }

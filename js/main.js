@@ -50,7 +50,8 @@ var Steven_todo = {
         $('#todo-list')
             .on('click', '.delete-btn', this.delete_todo.bind(this))
             .on('click', '.edit-btn', this.edit.bind(this))
-            .on('keyup', '.edit', this.updateByKeyUp.bind(this));
+            .on('keyup', '.edit', this.updateByKeyUp.bind(this))
+            .on('click', '.update-btn', this.updateByBtn.bind(this));
         $('#new-todo').on('keyup', this.createByKeyUp.bind(this));
         $('#submit-new-todo').on('click', this.createBySubmit.bind(this));
         // $('.todo-check-box').on('change', this.check.bind(this));
@@ -218,6 +219,17 @@ var Steven_todo = {
         console.log(value);
 
         let index = this.get_index(id);
+        this.todos[index].content = value;
+        this.render();
+    },
+    
+    updateByBtn: function (event) {
+        let id = event.target.closest('li').id;
+        let value = $(event.target).closest('li').find('.edit').val().trim();
+        console.log(value);
+
+        let index = this.get_index(id);
+        console.log(index);
         this.todos[index].content = value;
         this.render();
     }
